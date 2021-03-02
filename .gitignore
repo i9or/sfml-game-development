@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# CLion
+.idea/
+cmake-build-debug/
+
+# Executable
+bin/*
+!bin/.gitkeep
