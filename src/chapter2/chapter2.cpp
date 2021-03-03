@@ -1,7 +1,13 @@
-#include <iostream>
+#include "Game.h"
 
 int main() {
-    std::cout << "Hello, world!" << std::endl;
+    Game game;
+
+    while (!game.getWindow()->isDone()) {
+        game.handleInput();
+        game.update();
+        game.render();
+    }
 
     return 0;
 }
