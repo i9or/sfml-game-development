@@ -22,7 +22,7 @@ public:
     void update();
 
     bool isDone() const;
-    bool isFullScreen();
+    bool isFullScreen() const;
     sf::Vector2u getWindowSize();
 
     void toggleFullscreen();

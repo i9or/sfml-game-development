@@ -5,7 +5,7 @@
 #include "Window.h"
 
 Window::Window() {
-    setup("Window", sf::Vector2u(640, 480));
+    setup("Window", sf::Vector2u(1280, 800));
 }
 
 Window::Window(const std::string &t_title, const sf::Vector2u &t_size) {
@@ -27,8 +27,6 @@ void Window::setup(const std::string &t_title, const sf::Vector2u &t_size) {
 void Window::create() {
     auto style = m_isFullscreen ? sf::Style::Fullscreen : sf::Style::Close;
     m_window.create({m_windowSize.x, m_windowSize.y, 32}, m_windowTitle, style);
-    // TODO: implement a better approach
-    m_window.setFramerateLimit(60);
 }
 
 void Window::destroy() {
@@ -40,9 +38,18 @@ void Window::update() {
     while (m_window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             m_isDone = true;
-        } else if (event.type == sf::Event::KeyPressed &&
-                   event.key.code == sf::Keyboard::F5) {
-            toggleFullscreen();
+        } else if (event.type == sf::Event::KeyPressed) {
+            switch (event.key.code) {
+                case sf::Keyboard::F5:
+                    toggleFullscreen();
+                    break;
+                case sf::Keyboard::Escape:
+                    m_isDone = true;
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }
@@ -65,12 +72,12 @@ bool Window::isDone() const {
     return m_isDone;
 }
 
-bool Window::isFullScreen() {
+bool Window::isFullScreen() const {
     return m_isFullscreen;
 }
 
 sf::Vector2u Window::getWindowSize() {
-    return m_windowSize;
+    return m_isFullscreen ? m_window.getSize() : m_windowSize;
 }
 
 void Window::draw(sf::Drawable &t_drawable) {

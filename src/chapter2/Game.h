@@ -18,6 +18,9 @@ public:
     void render();
     Window *getWindow();
 
+    sf::Time getElapsed();
+    void restartClock();
+
 private:
     void moveMushroom();
 
@@ -25,6 +28,11 @@ private:
     sf::Texture m_mushroomTexture;
     sf::Sprite m_mushroom;
     sf::Vector2f m_increment;
+
+    sf::Clock m_clock;
+    sf::Time m_elapsed;
+
+    static constexpr float FRAME_TIME = 1.0f / 60.0f;
 };
 
 
