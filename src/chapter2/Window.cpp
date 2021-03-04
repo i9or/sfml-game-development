@@ -27,6 +27,8 @@ void Window::setup(const std::string &t_title, const sf::Vector2u &t_size) {
 void Window::create() {
     auto style = m_isFullscreen ? sf::Style::Fullscreen : sf::Style::Close;
     m_window.create({m_windowSize.x, m_windowSize.y, 32}, m_windowTitle, style);
+    // TODO: implement a better approach
+    m_window.setFramerateLimit(60);
 }
 
 void Window::destroy() {

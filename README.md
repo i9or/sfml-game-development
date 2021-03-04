@@ -9,7 +9,7 @@ Source code written while reading "SFML Game Development by Example" book by Rai
 Install dependencies:
 
 ```commandline
-sudo apt-get install libx11-dev libegl1-mesa-dev libudev-dev libopenal-dev libvorbis-dev libflac-dev libxrandr-dev libfreetype-dev
+sudo apt-get install libx11-dev libegl1-mesa-dev libudev-dev libopenal-dev libvorbis-dev libflac-dev libxrandr-dev libfreetype-dev xorg-dev
 ```
 
 Clone repository:
