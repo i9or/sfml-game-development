@@ -13,4 +13,5 @@ add_subdirectory(vendor/SFML)
 
 add_subdirectory(src/chapter1)
 add_subdirectory(src/chapter2)
+add_subdirectory(src/chapter3)
 
