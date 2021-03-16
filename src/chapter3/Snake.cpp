@@ -44,4 +44,67 @@ sf::Vector2i Snake::getPosition() {
             : sf::Vector2i(1, 1));
 }
 
+int Snake::getLives() {
+    return m_lives;
+}
+
+int Snake::getScore() {
+    return m_score;
+}
+
+void Snake::increaseScore() {
+    m_score += 10;
+}
+
+bool Snake::hasLost() {
+    return m_lost;
+}
+
+void Snake::lose() {
+    m_lost = true;
+}
+
+void Snake::toggleLost() {
+    m_lost = !m_lost;
+}
+
+void Snake::extend() {
+    if (m_snakeBody.empty()) {
+        return;
+    }
+
+    SnakeSegment &tail_head = m_snakeBody[m_snakeBody.size() - 1];
+
+    if (m_snakeBody.size() > 1) {
+        SnakeSegment &tail_bone = m_snakeBody[m_snakeBody.size() - 2];
+        if (tail_head.position.x == tail_bone.position.x) {
+            if (tail_head.position.y > tail_bone.position.y) {
+                m_snakeBody.push_back(SnakeSegment(tail_head.position.x, tail_head.position.y + 1));
+            }
+        }
+    } else {
+
+    }
+}
+
+void Snake::move() {
+
+}
+
+void Snake::tick() {
+
+}
+
+void Snake::cut(int t_segments) {
+
+}
+
+void Snake::render(sf::RenderWindow &t_window) {
+
+}
+
+void Snake::checkCollision() {
+
+}
+
 
