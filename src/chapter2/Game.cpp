@@ -1,10 +1,11 @@
-//
+﻿//
 // Created by igor on 3/3/21.
 //
 
 #include "Game.h"
 
-Game::Game() : m_window("Chapter 2", sf::Vector2u(800, 600)) {
+Game::Game()
+    : m_window("Chapter 2", sf::Vector2u(800, 600)) {
     m_mushroomTexture.loadFromFile("../assets/mushroom.png");
     m_mushroom.setTexture(m_mushroomTexture);
     m_increment = sf::Vector2f(400.0f, 400.0f);
@@ -26,14 +27,14 @@ void Game::moveMushroom() {
     sf::Vector2u textureSize = m_mushroomTexture.getSize();
 
     if ((m_mushroom.getPosition().x >
-         static_cast<float>(windowSize.x - textureSize.x) &&
+             static_cast<float>(windowSize.x - textureSize.x) &&
          m_increment.x > 0) ||
         (m_mushroom.getPosition().x < 0 && m_increment.x < 0)) {
         m_increment.x = -m_increment.x;
     }
 
     if ((m_mushroom.getPosition().y >
-         static_cast<float>(windowSize.y - textureSize.y) &&
+             static_cast<float>(windowSize.y - textureSize.y) &&
          m_increment.y > 0) ||
         (m_mushroom.getPosition().y < 0 && m_increment.y < 0)) {
         m_increment.y = -m_increment.y;
@@ -50,10 +51,9 @@ void Game::render() {
 }
 
 void Game::handleInput() {
-
 }
 
-Window *Game::getWindow() {
+Window* Game::getWindow() {
     return &m_window;
 }
 

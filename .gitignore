@@ -1,4 +1,4 @@
-# Prerequisites
+﻿# Prerequisites
 *.d
 
 # Compiled Object files
@@ -38,3 +38,6 @@ cmake-build-debug/
 # Executable
 bin/*
 !bin/.gitkeep
+
+# Qt Creator
+CMakeLists.txt.user

@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by igor on 3/3/21.
 //
 
@@ -8,7 +8,7 @@ Window::Window() {
     setup("Window", sf::Vector2u(1280, 800));
 }
 
-Window::Window(const std::string &t_title, const sf::Vector2u &t_size) {
+Window::Window(const std::string& t_title, const sf::Vector2u& t_size) {
     setup(t_title, t_size);
 }
 
@@ -16,7 +16,7 @@ Window::~Window() {
     destroy();
 }
 
-void Window::setup(const std::string &t_title, const sf::Vector2u &t_size) {
+void Window::setup(const std::string& t_title, const sf::Vector2u& t_size) {
     m_windowTitle = t_title;
     m_windowSize = t_size;
     m_isFullscreen = false;
@@ -26,7 +26,7 @@ void Window::setup(const std::string &t_title, const sf::Vector2u &t_size) {
 
 void Window::create() {
     auto style = m_isFullscreen ? sf::Style::Fullscreen : sf::Style::Close;
-    m_window.create({m_windowSize.x, m_windowSize.y, 32}, m_windowTitle, style);
+    m_window.create({ m_windowSize.x, m_windowSize.y, 32 }, m_windowTitle, style);
 }
 
 void Window::destroy() {
@@ -34,7 +34,7 @@ void Window::destroy() {
 }
 
 void Window::update() {
-    sf::Event event{};
+    sf::Event event {};
     while (m_window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             m_isDone = true;
@@ -49,7 +49,6 @@ void Window::update() {
                 default:
                     break;
             }
-
         }
     }
 }
@@ -80,6 +79,6 @@ sf::Vector2u Window::getWindowSize() {
     return m_isFullscreen ? m_window.getSize() : m_windowSize;
 }
 
-void Window::draw(sf::Drawable &t_drawable) {
+void Window::draw(sf::Drawable& t_drawable) {
     m_window.draw(t_drawable);
 }

@@ -1,10 +1,9 @@
-//
+﻿//
 // Created by igor on 3/3/21.
 //
 
 #ifndef SFML_GAME_DEVELOPMENT_GAME_H
 #define SFML_GAME_DEVELOPMENT_GAME_H
-
 
 #include "Window.h"
 
@@ -16,7 +15,7 @@ public:
     void handleInput();
     void update();
     void render();
-    Window *getWindow();
+    Window* getWindow();
 
     sf::Time getElapsed();
     void restartClock();
@@ -34,6 +33,5 @@ private:
 
     static constexpr float FRAME_TIME = 1.0f / 60.0f;
 };
-
 
 #endif //SFML_GAME_DEVELOPMENT_GAME_H
