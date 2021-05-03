@@ -1,7 +1,7 @@
 ﻿#include <SFML/Graphics.hpp>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(640, 480), "Bouncing mushroom!");
+    sf::RenderWindow window(sf::VideoMode(640, 480), "Cool bouncing mushroom!");
 
     sf::Texture mushroomTexture;
     mushroomTexture.loadFromFile("../assets/mushroom.png");
