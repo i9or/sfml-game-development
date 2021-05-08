@@ -1,4 +1,4 @@
-﻿# Prerequisites
+# Prerequisites
 *.d
 
 # Compiled Object files
@@ -41,3 +41,7 @@ bin/*
 
 # Qt Creator
 CMakeLists.txt.user
+
+# Visual Studio
+out/
+.vs/
