@@ -45,3 +45,9 @@ CMakeLists.txt.user
 # Visual Studio
 out/
 .vs/
+
+# CMake Build
+build/
+
+# ctags
+tags

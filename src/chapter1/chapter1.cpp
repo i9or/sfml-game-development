@@ -1,4 +1,4 @@
-﻿#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(640, 480), "Cool bouncing mushroom!");

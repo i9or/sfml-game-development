@@ -1,7 +1,3 @@
-﻿//
-// Created by igor on 3/3/21.
-//
-
 #ifndef SFML_GAME_DEVELOPMENT_GAME_H
 #define SFML_GAME_DEVELOPMENT_GAME_H
 
